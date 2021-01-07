@@ -1,24 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Idb-u1-CO3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Monitor Test-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVY-Bj-Ovw">
+                                <rect key="frame" x="176" y="383" width="62" height="30"/>
+                                <state key="normal" title="原生测试"/>
+                                <connections>
+                                    <segue destination="sDA-tG-fYl" kind="show" id="HdY-Qh-xnH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTY-8F-H2Q">
+                                <rect key="frame" x="160" y="433" width="94" height="30"/>
+                                <state key="normal" title="WebView测试"/>
+                                <connections>
+                                    <segue destination="Tcs-aS-SJ9" kind="show" id="Trp-We-XpU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mTY-8F-H2Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="52m-g1-fbW"/>
+                            <constraint firstItem="mTY-8F-H2Q" firstAttribute="top" secondItem="ZVY-Bj-Ovw" secondAttribute="bottom" constant="20" id="RZN-bt-hbe"/>
+                            <constraint firstItem="ZVY-Bj-Ovw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RvF-bd-j97"/>
+                            <constraint firstItem="mTY-8F-H2Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iOo-cv-7WI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Monitor Test" id="k7B-IE-e9c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="121.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XTA-7Q-CR5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Idb-u1-CO3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ASy-Yj-cde">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KfF-B9-raK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeZ-dA-UNg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="121.875"/>
+        </scene>
+        <!--Native View Controller-->
+        <scene sceneID="VSd-HX-acD">
+            <objects>
+                <viewController id="sDA-tG-fYl" customClass="NativeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wzb-jF-A19">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TXN-DI-Hpd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">黑夜问白天 - 林俊杰
+作曲：林俊杰　
+作词：易家扬
+半天上的秃鹰那张脸
+半生中的记忆在盘旋
+第五十三天后的日夜线
+等黑夜问白天
+能不能赦免
+灰色的人间
+别交换吧日夜
+冰封的眼泪
+一滴就很咸
+来自暮光的 明信片
+它无声无色无言
+翻过山巅跟我扮鬼脸
+但黑夜恨白天
+拼命的往前
+听不到救援
+命运太疯癫 每一眨眼 都很玄
+那对逆光中的黑雁
+也飞过去老远
+等再见不如说一次再见
+挑一天
+皮肤之下的瘀青渗着血
+细胞之中的绝望在喊冤
+被五十三天的孤单抽一鞭
+等黑夜问白天
+能不能赦免
+灰色的人间
+别交换吧日夜
+冰封的眼泪
+一滴就很咸
+来自暮光的 明信片
+它无声无色无言
+翻过山巅跟我扮鬼脸
+喊黑夜吻白天
+谢谢了时间
+弄红了双眼
+往事的光圈
+每一瞬间
+都很绝
+那跑过去的昼夜
+是孤独的修炼
+说再见不如忘掉能再见
+在半空中真好
+不会吵 人少
+却看得到那些近在天边的风暴
+(黑夜吻白天)
+谢谢了时间
+弄红了双眼
+往事的光圈
+每一瞬间
+都很绝
+那跑过去的昼夜
+是孤独的修炼
+说再见不如忘掉能再见
+今天</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TXN-DI-Hpd" firstAttribute="leading" secondItem="vsQ-81-44n" secondAttribute="leading" id="2yo-YY-vEz"/>
+                            <constraint firstItem="vsQ-81-44n" firstAttribute="trailing" secondItem="TXN-DI-Hpd" secondAttribute="trailing" id="C8n-uU-PcQ"/>
+                            <constraint firstItem="TXN-DI-Hpd" firstAttribute="top" secondItem="vsQ-81-44n" secondAttribute="top" id="Y9H-Wz-feU"/>
+                            <constraint firstItem="vsQ-81-44n" firstAttribute="bottom" secondItem="TXN-DI-Hpd" secondAttribute="bottom" id="bUQ-jw-gTP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vsQ-81-44n"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2fP-aG-6yR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWP-7F-pah" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="-226"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="H8R-aw-Zmg">
+            <objects>
+                <viewController id="Tcs-aS-SJ9" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AZI-LQ-LIu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkE-bG-7Om">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HkE-bG-7Om" firstAttribute="top" secondItem="ZdR-4X-01i" secondAttribute="top" id="Kzd-6H-f7P"/>
+                            <constraint firstItem="ZdR-4X-01i" firstAttribute="bottom" secondItem="HkE-bG-7Om" secondAttribute="bottom" id="NHa-QG-xWX"/>
+                            <constraint firstItem="HkE-bG-7Om" firstAttribute="leading" secondItem="ZdR-4X-01i" secondAttribute="leading" id="dXz-hr-ZkT"/>
+                            <constraint firstItem="ZdR-4X-01i" firstAttribute="trailing" secondItem="HkE-bG-7Om" secondAttribute="trailing" id="pMW-d8-pqb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZdR-4X-01i"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dJo-bF-Hr1"/>
+                    <connections>
+                        <outlet property="webView" destination="HkE-bG-7Om" id="5ME-Pu-7UP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GEf-DG-WfP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="475"/>
         </scene>
     </scenes>
 </document>

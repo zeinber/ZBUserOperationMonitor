@@ -14,6 +14,9 @@
 		9CEFC4E825A7108E0017A514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEFC4E725A7108E0017A514 /* Assets.xcassets */; };
 		9CEFC4EB25A7108E0017A514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEFC4E925A7108E0017A514 /* LaunchScreen.storyboard */; };
 		9CEFC4EE25A7108E0017A514 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4ED25A7108E0017A514 /* main.m */; };
+		9CEFC4F625A715030017A514 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4F525A715030017A514 /* NativeViewController.m */; };
+		9CEFC4F925A7150C0017A514 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4F825A7150C0017A514 /* WebViewController.m */; };
+		9CEFC4FD25A71A030017A514 /* heartwall.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CEFC4FC25A71A030017A514 /* heartwall.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,11 @@
 		9CEFC4EA25A7108E0017A514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CEFC4EC25A7108E0017A514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CEFC4ED25A7108E0017A514 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9CEFC4F425A715030017A514 /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
+		9CEFC4F525A715030017A514 /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		9CEFC4F725A7150C0017A514 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9CEFC4F825A7150C0017A514 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9CEFC4FC25A71A030017A514 /* heartwall.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = heartwall.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +73,8 @@
 				9CEFC4DC25A710870017A514 /* AppDelegate.m */,
 				9CEFC4DE25A710870017A514 /* SceneDelegate.h */,
 				9CEFC4DF25A710870017A514 /* SceneDelegate.m */,
-				9CEFC4E125A710870017A514 /* ViewController.h */,
-				9CEFC4E225A710870017A514 /* ViewController.m */,
+				9CEFC4FB25A715E50017A514 /* Source */,
+				9CEFC4FA25A715D40017A514 /* ViewController */,
 				9CEFC4E425A710870017A514 /* Main.storyboard */,
 				9CEFC4E725A7108E0017A514 /* Assets.xcassets */,
 				9CEFC4E925A7108E0017A514 /* LaunchScreen.storyboard */,
@@ -74,6 +82,27 @@
 				9CEFC4ED25A7108E0017A514 /* main.m */,
 			);
 			path = ZBUserOperationMonitor;
+			sourceTree = "<group>";
+		};
+		9CEFC4FA25A715D40017A514 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC4E125A710870017A514 /* ViewController.h */,
+				9CEFC4E225A710870017A514 /* ViewController.m */,
+				9CEFC4F425A715030017A514 /* NativeViewController.h */,
+				9CEFC4F525A715030017A514 /* NativeViewController.m */,
+				9CEFC4F725A7150C0017A514 /* WebViewController.h */,
+				9CEFC4F825A7150C0017A514 /* WebViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9CEFC4FB25A715E50017A514 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC4FC25A71A030017A514 /* heartwall.html */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEFC4EB25A7108E0017A514 /* LaunchScreen.storyboard in Resources */,
+				9CEFC4FD25A71A030017A514 /* heartwall.html in Resources */,
 				9CEFC4E825A7108E0017A514 /* Assets.xcassets in Resources */,
 				9CEFC4E625A710870017A514 /* Main.storyboard in Resources */,
 			);
@@ -147,6 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEFC4E325A710870017A514 /* ViewController.m in Sources */,
+				9CEFC4F925A7150C0017A514 /* WebViewController.m in Sources */,
+				9CEFC4F625A715030017A514 /* NativeViewController.m in Sources */,
 				9CEFC4DD25A710870017A514 /* AppDelegate.m in Sources */,
 				9CEFC4EE25A7108E0017A514 /* main.m in Sources */,
 				9CEFC4E025A710870017A514 /* SceneDelegate.m in Sources */,
