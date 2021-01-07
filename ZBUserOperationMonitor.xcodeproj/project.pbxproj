@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C20CB2625A73CCD002BED98 /* UIApplication+ZBUserOperationMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC52025A735510017A514 /* UIApplication+ZBUserOperationMonitor.m */; };
+		9C20CB2725A73CE2002BED98 /* ZBKeyboardMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC50425A72F4A0017A514 /* ZBKeyboardMonitor.m */; };
 		9CEFC4DD25A710870017A514 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4DC25A710870017A514 /* AppDelegate.m */; };
 		9CEFC4E025A710870017A514 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4DF25A710870017A514 /* SceneDelegate.m */; };
 		9CEFC4E325A710870017A514 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4E225A710870017A514 /* ViewController.m */; };
@@ -17,6 +19,8 @@
 		9CEFC4F625A715030017A514 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4F525A715030017A514 /* NativeViewController.m */; };
 		9CEFC4F925A7150C0017A514 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4F825A7150C0017A514 /* WebViewController.m */; };
 		9CEFC4FD25A71A030017A514 /* heartwall.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CEFC4FC25A71A030017A514 /* heartwall.html */; };
+		9CEFC50225A72C270017A514 /* ZBHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC50025A72C260017A514 /* ZBHooker.m */; };
+		9CEFC50825A72F6B0017A514 /* ZBClipboardMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC50725A72F6B0017A514 /* ZBClipboardMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,14 @@
 		9CEFC4F725A7150C0017A514 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9CEFC4F825A7150C0017A514 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9CEFC4FC25A71A030017A514 /* heartwall.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = heartwall.html; sourceTree = "<group>"; };
+		9CEFC50025A72C260017A514 /* ZBHooker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBHooker.m; sourceTree = "<group>"; };
+		9CEFC50125A72C270017A514 /* ZBHooker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBHooker.h; sourceTree = "<group>"; };
+		9CEFC50325A72F4A0017A514 /* ZBKeyboardMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBKeyboardMonitor.h; sourceTree = "<group>"; };
+		9CEFC50425A72F4A0017A514 /* ZBKeyboardMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBKeyboardMonitor.m; sourceTree = "<group>"; };
+		9CEFC50625A72F6B0017A514 /* ZBClipboardMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBClipboardMonitor.h; sourceTree = "<group>"; };
+		9CEFC50725A72F6B0017A514 /* ZBClipboardMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBClipboardMonitor.m; sourceTree = "<group>"; };
+		9CEFC51F25A735510017A514 /* UIApplication+ZBUserOperationMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ZBUserOperationMonitor.h"; sourceTree = "<group>"; };
+		9CEFC52025A735510017A514 /* UIApplication+ZBUserOperationMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ZBUserOperationMonitor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +83,11 @@
 			children = (
 				9CEFC4DB25A710870017A514 /* AppDelegate.h */,
 				9CEFC4DC25A710870017A514 /* AppDelegate.m */,
+				9CEFC51825A735050017A514 /* Category */,
+				9CEFC50925A72F6F0017A514 /* Monitor */,
 				9CEFC4DE25A710870017A514 /* SceneDelegate.h */,
 				9CEFC4DF25A710870017A514 /* SceneDelegate.m */,
+				9CEFC4FF25A72BD00017A514 /* Hook */,
 				9CEFC4FB25A715E50017A514 /* Source */,
 				9CEFC4FA25A715D40017A514 /* ViewController */,
 				9CEFC4E425A710870017A514 /* Main.storyboard */,
@@ -103,6 +118,51 @@
 				9CEFC4FC25A71A030017A514 /* heartwall.html */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		9CEFC4FF25A72BD00017A514 /* Hook */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC50125A72C270017A514 /* ZBHooker.h */,
+				9CEFC50025A72C260017A514 /* ZBHooker.m */,
+			);
+			path = Hook;
+			sourceTree = "<group>";
+		};
+		9CEFC50925A72F6F0017A514 /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC50F25A734B30017A514 /* Keyboard */,
+				9CEFC50E25A734A40017A514 /* Clipboard */,
+			);
+			path = Monitor;
+			sourceTree = "<group>";
+		};
+		9CEFC50E25A734A40017A514 /* Clipboard */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC50625A72F6B0017A514 /* ZBClipboardMonitor.h */,
+				9CEFC50725A72F6B0017A514 /* ZBClipboardMonitor.m */,
+			);
+			path = Clipboard;
+			sourceTree = "<group>";
+		};
+		9CEFC50F25A734B30017A514 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC50325A72F4A0017A514 /* ZBKeyboardMonitor.h */,
+				9CEFC50425A72F4A0017A514 /* ZBKeyboardMonitor.m */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		9CEFC51825A735050017A514 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9CEFC51F25A735510017A514 /* UIApplication+ZBUserOperationMonitor.h */,
+				9CEFC52025A735510017A514 /* UIApplication+ZBUserOperationMonitor.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +237,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEFC4E325A710870017A514 /* ViewController.m in Sources */,
+				9C20CB2725A73CE2002BED98 /* ZBKeyboardMonitor.m in Sources */,
+				9C20CB2625A73CCD002BED98 /* UIApplication+ZBUserOperationMonitor.m in Sources */,
 				9CEFC4F925A7150C0017A514 /* WebViewController.m in Sources */,
+				9CEFC50225A72C270017A514 /* ZBHooker.m in Sources */,
+				9CEFC50825A72F6B0017A514 /* ZBClipboardMonitor.m in Sources */,
 				9CEFC4F625A715030017A514 /* NativeViewController.m in Sources */,
 				9CEFC4DD25A710870017A514 /* AppDelegate.m in Sources */,
 				9CEFC4EE25A7108E0017A514 /* main.m in Sources */,

@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+/// keyboard monitor
+#import "ZBKeyboardMonitor.h"
+/// clipboard monitor
+#import "ZBClipboardMonitor.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    /// keyboard monitor
+//    [ZBKeyboardMonitor monitor];
+//    /// clipboard monitor
+//    [ZBClipboardMonitor monitor];
     return YES;
 }
 
