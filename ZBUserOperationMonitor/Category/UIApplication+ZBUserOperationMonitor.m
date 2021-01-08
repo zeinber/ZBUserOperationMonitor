@@ -10,7 +10,7 @@
 #import "ZBHooker.h"
 
 /// 点击屏幕的通知
-NSString *ZBUserOperationMonitor_keyboardPressDownNotification = @"ZBUserOperationMonitor_keyboardPressDownNotification";
+NSString *ZBUserOperationMonitor_keyboardPressUpNotification = @"ZBUserOperationMonitor_keyboardPressUpNotification";
 
 @implementation UIApplication (ZBUserOperationMonitor)
 #pragma mark - load
@@ -46,11 +46,11 @@ NSString *ZBUserOperationMonitor_keyboardPressDownNotification = @"ZBUserOperati
         return;
     }
     
-    // 处理点击事件 - 获取手指pressDown的状态
+    // 处理点击事件 - 获取手指PressUp的状态
     if (touch.phase == UITouchPhaseEnded) {
         // 是键盘点击事件
         if ([self isKeyboadWithTouch:touch]) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:ZBUserOperationMonitor_keyboardPressDownNotification object:touch userInfo:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:ZBUserOperationMonitor_keyboardPressUpNotification object:touch userInfo:nil];
         }
     }
 }

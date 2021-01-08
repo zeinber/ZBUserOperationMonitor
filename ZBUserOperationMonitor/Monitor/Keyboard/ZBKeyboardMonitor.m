@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "ZBHooker.h"
 
-extern NSString *ZBUserOperationMonitor_keyboardPressDownNotification;
+extern NSString *ZBUserOperationMonitor_keyboardPressUpNotification;
 
 @implementation ZBKeyboardMonitor
 #pragma mark - load
@@ -40,7 +40,7 @@ extern NSString *ZBUserOperationMonitor_keyboardPressDownNotification;
 /// 可以监控所有键盘输入的行为，但对于模拟器使用电脑键盘直接输入无能为力（正常手机设备不会有这种情况发生）
 + (void)keyboardMonitor {
     /// monitor keyboard
-    [[NSNotificationCenter defaultCenter] addObserverForName:ZBUserOperationMonitor_keyboardPressDownNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:ZBUserOperationMonitor_keyboardPressUpNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         UITouch *touch = note.object;
         id keyboardImpl = [self getResponderWithView:touch.view className:@"UIKeyboardImpl"];
         id delegate = [keyboardImpl valueForKey:@"delegate"];
