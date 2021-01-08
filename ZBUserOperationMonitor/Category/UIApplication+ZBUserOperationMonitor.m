@@ -9,8 +9,9 @@
 #import "UIApplication+ZBUserOperationMonitor.h"
 #import "ZBHooker.h"
 
-/// 点击屏幕的通知
+/// 点击键盘后抬时的通知
 NSString *ZBUserOperationMonitor_keyboardPressUpNotification = @"ZBUserOperationMonitor_keyboardPressUpNotification";
+
 
 @implementation UIApplication (ZBUserOperationMonitor)
 #pragma mark - load
