@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C09DB6B25A87D3E00EA4C68 /* ZBViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C09DB6A25A87D3E00EA4C68 /* ZBViewTool.m */; };
 		9C20CB2625A73CCD002BED98 /* UIApplication+ZBUserOperationMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC52025A735510017A514 /* UIApplication+ZBUserOperationMonitor.m */; };
 		9C20CB2725A73CE2002BED98 /* ZBKeyboardMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC50425A72F4A0017A514 /* ZBKeyboardMonitor.m */; };
 		9CEFC4DD25A710870017A514 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFC4DC25A710870017A514 /* AppDelegate.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C09DB6925A87D3E00EA4C68 /* ZBViewTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBViewTool.h; sourceTree = "<group>"; };
+		9C09DB6A25A87D3E00EA4C68 /* ZBViewTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBViewTool.m; sourceTree = "<group>"; };
 		9CEFC4D825A710870017A514 /* ZBUserOperationMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBUserOperationMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEFC4DB25A710870017A514 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CEFC4DC25A710870017A514 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C09DB6525A87CC800EA4C68 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9C09DB6925A87D3E00EA4C68 /* ZBViewTool.h */,
+				9C09DB6A25A87D3E00EA4C68 /* ZBViewTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		9CEFC4CF25A710870017A514 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +92,7 @@
 			children = (
 				9CEFC4DB25A710870017A514 /* AppDelegate.h */,
 				9CEFC4DC25A710870017A514 /* AppDelegate.m */,
+				9C09DB6525A87CC800EA4C68 /* Tool */,
 				9CEFC51825A735050017A514 /* Category */,
 				9CEFC50925A72F6F0017A514 /* Monitor */,
 				9CEFC4FF25A72BD00017A514 /* Hook */,
@@ -237,6 +250,7 @@
 				9CEFC4F925A7150C0017A514 /* WebViewController.m in Sources */,
 				9CEFC50225A72C270017A514 /* ZBHooker.m in Sources */,
 				9CEFC50825A72F6B0017A514 /* ZBClipboardMonitor.m in Sources */,
+				9C09DB6B25A87D3E00EA4C68 /* ZBViewTool.m in Sources */,
 				9CEFC4F625A715030017A514 /* NativeViewController.m in Sources */,
 				9CEFC4DD25A710870017A514 /* AppDelegate.m in Sources */,
 				9CEFC4EE25A7108E0017A514 /* main.m in Sources */,

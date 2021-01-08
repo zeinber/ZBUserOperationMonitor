@@ -9,9 +9,11 @@
 #import "UIApplication+ZBUserOperationMonitor.h"
 #import "ZBHooker.h"
 
-/// 点击键盘后抬时的通知
+/// 点击键盘后抬起时的通知
 NSString *ZBUserOperationMonitor_keyboardPressUpNotification = @"ZBUserOperationMonitor_keyboardPressUpNotification";
 
+/// 点击剪切板工具栏时抬起时的回调
+NSString *ZBUserOperationMonitor_clipboardPressUpNotification = @"ZBUserOperationMonitor_clipboardPressUpNotification";
 
 @implementation UIApplication (ZBUserOperationMonitor)
 #pragma mark - load
@@ -50,16 +52,23 @@ NSString *ZBUserOperationMonitor_keyboardPressUpNotification = @"ZBUserOperation
     // 处理点击事件 - 获取手指PressUp的状态
     if (touch.phase == UITouchPhaseEnded) {
         // 是键盘点击事件
-        if ([self isKeyboadWithTouch:touch]) {
+        if ([self isKeyboardWithTouch:touch]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:ZBUserOperationMonitor_keyboardPressUpNotification object:touch userInfo:nil];
+        }else if ([self isClipboardWithTouch:touch]) {// 点击剪切板工具栏时抬起时的回调
+            [[NSNotificationCenter defaultCenter] postNotificationName:ZBUserOperationMonitor_clipboardPressUpNotification object:touch userInfo:nil];
         }
     }
 }
 
 #pragma mark - private method
-- (BOOL)isKeyboadWithTouch:(UITouch *)touch {
+- (BOOL)isKeyboardWithTouch:(UITouch *)touch {
     // window 为UIRemoteKeyboardWindow，说明touch在键盘上
     return [touch.window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")];
+}
+
+- (BOOL)isClipboardWithTouch:(UITouch *)touch {
+    // view 为UICalloutBarButton且window为UITextEffectsWindow，说明touch在工具栏上
+    return [touch.view isKindOfClass:NSClassFromString(@"UICalloutBarButton")] && [touch.window isKindOfClass:NSClassFromString(@"UITextEffectsWindow")];
 }
 
 @end
