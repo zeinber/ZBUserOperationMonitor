@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 
 @interface WebViewController ()
-@property (weak, nonatomic) IBOutlet WKWebView *webView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
 
 @implementation WebViewController

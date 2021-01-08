@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Idb-u1-CO3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -74,7 +75,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TXN-DI-Hpd">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">黑夜问白天 - 林俊杰
+                                <string key="text">黑夜问白天 - 林俊杰
 作曲：林俊杰　
 作词：易家扬
 半天上的秃鹰那张脸
@@ -130,7 +131,7 @@
 那跑过去的昼夜
 是孤独的修炼
 说再见不如忘掉能再见
-今天</mutableString>
+今天</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -159,27 +160,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkE-bG-7Om">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UV-TE-bvE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HkE-bG-7Om" firstAttribute="top" secondItem="ZdR-4X-01i" secondAttribute="top" id="Kzd-6H-f7P"/>
-                            <constraint firstItem="ZdR-4X-01i" firstAttribute="bottom" secondItem="HkE-bG-7Om" secondAttribute="bottom" id="NHa-QG-xWX"/>
-                            <constraint firstItem="HkE-bG-7Om" firstAttribute="leading" secondItem="ZdR-4X-01i" secondAttribute="leading" id="dXz-hr-ZkT"/>
-                            <constraint firstItem="ZdR-4X-01i" firstAttribute="trailing" secondItem="HkE-bG-7Om" secondAttribute="trailing" id="pMW-d8-pqb"/>
+                            <constraint firstItem="ZdR-4X-01i" firstAttribute="trailing" secondItem="8UV-TE-bvE" secondAttribute="trailing" id="4gv-jK-nMJ"/>
+                            <constraint firstItem="8UV-TE-bvE" firstAttribute="leading" secondItem="ZdR-4X-01i" secondAttribute="leading" id="52P-di-3GR"/>
+                            <constraint firstItem="8UV-TE-bvE" firstAttribute="top" secondItem="ZdR-4X-01i" secondAttribute="top" id="cLW-RO-0xx"/>
+                            <constraint firstItem="ZdR-4X-01i" firstAttribute="bottom" secondItem="8UV-TE-bvE" secondAttribute="bottom" id="srf-4p-SL8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZdR-4X-01i"/>
                     </view>
                     <navigationItem key="navigationItem" id="dJo-bF-Hr1"/>
                     <connections>
-                        <outlet property="webView" destination="HkE-bG-7Om" id="5ME-Pu-7UP"/>
+                        <outlet property="webView" destination="8UV-TE-bvE" id="SyY-zt-EcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEf-DG-WfP" sceneMemberID="firstResponder"/>
