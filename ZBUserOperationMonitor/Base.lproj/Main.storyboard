@@ -72,77 +72,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TXN-DI-Hpd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TEXTAREA测试的文字" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TXN-DI-Hpd">
+                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">黑夜问白天 - 林俊杰
-作曲：林俊杰　
-作词：易家扬
-半天上的秃鹰那张脸
-半生中的记忆在盘旋
-第五十三天后的日夜线
-等黑夜问白天
-能不能赦免
-灰色的人间
-别交换吧日夜
-冰封的眼泪
-一滴就很咸
-来自暮光的 明信片
-它无声无色无言
-翻过山巅跟我扮鬼脸
-但黑夜恨白天
-拼命的往前
-听不到救援
-命运太疯癫 每一眨眼 都很玄
-那对逆光中的黑雁
-也飞过去老远
-等再见不如说一次再见
-挑一天
-皮肤之下的瘀青渗着血
-细胞之中的绝望在喊冤
-被五十三天的孤单抽一鞭
-等黑夜问白天
-能不能赦免
-灰色的人间
-别交换吧日夜
-冰封的眼泪
-一滴就很咸
-来自暮光的 明信片
-它无声无色无言
-翻过山巅跟我扮鬼脸
-喊黑夜吻白天
-谢谢了时间
-弄红了双眼
-往事的光圈
-每一瞬间
-都很绝
-那跑过去的昼夜
-是孤独的修炼
-说再见不如忘掉能再见
-在半空中真好
-不会吵 人少
-却看得到那些近在天边的风暴
-(黑夜吻白天)
-谢谢了时间
-弄红了双眼
-往事的光圈
-每一瞬间
-都很绝
-那跑过去的昼夜
-是孤独的修炼
-说再见不如忘掉能再见
-今天</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="INPUT测试的文字" borderStyle="roundedRect" placeholder="输入测试的文字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUD-v3-4f0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TXN-DI-Hpd" firstAttribute="leading" secondItem="vsQ-81-44n" secondAttribute="leading" id="2yo-YY-vEz"/>
                             <constraint firstItem="vsQ-81-44n" firstAttribute="trailing" secondItem="TXN-DI-Hpd" secondAttribute="trailing" id="C8n-uU-PcQ"/>
-                            <constraint firstItem="TXN-DI-Hpd" firstAttribute="top" secondItem="vsQ-81-44n" secondAttribute="top" id="Y9H-Wz-feU"/>
+                            <constraint firstItem="TXN-DI-Hpd" firstAttribute="top" secondItem="qUD-v3-4f0" secondAttribute="bottom" constant="10" id="F6L-i5-6Cl"/>
+                            <constraint firstItem="qUD-v3-4f0" firstAttribute="top" secondItem="vsQ-81-44n" secondAttribute="top" id="Jld-D4-XAZ"/>
+                            <constraint firstItem="vsQ-81-44n" firstAttribute="trailing" secondItem="qUD-v3-4f0" secondAttribute="trailing" id="TnS-CA-3FS"/>
                             <constraint firstItem="vsQ-81-44n" firstAttribute="bottom" secondItem="TXN-DI-Hpd" secondAttribute="bottom" id="bUQ-jw-gTP"/>
+                            <constraint firstItem="qUD-v3-4f0" firstAttribute="leading" secondItem="vsQ-81-44n" secondAttribute="leading" id="vDc-cm-EBZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vsQ-81-44n"/>
                     </view>
@@ -150,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWP-7F-pah" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="-226"/>
+            <point key="canvasLocation" x="1886.9565217391305" y="-226.33928571428569"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="H8R-aw-Zmg">

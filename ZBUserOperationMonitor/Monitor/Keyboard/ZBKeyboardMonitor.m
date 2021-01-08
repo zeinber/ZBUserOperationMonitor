@@ -42,7 +42,59 @@ extern NSString *ZBUserOperationMonitor_keyboardPressDownNotification;
     /// monitor keyboard
     [[NSNotificationCenter defaultCenter] addObserverForName:ZBUserOperationMonitor_keyboardPressDownNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         UITouch *touch = note.object;
-        NSLog(@"[keyboardMonitor - %s] - keyboard：%@",__func__,touch);
+        id keyboardImpl = [self getResponderWithView:touch.view className:@"UIKeyboardImpl"];
+        id delegate = [keyboardImpl valueForKey:@"delegate"];
+        if ([delegate isKindOfClass:NSClassFromString(@"UITextField")]) {// 如果是原生的UITextField
+            UITextField *textField = (UITextField *)delegate;
+            NSLog(@"[(UIApplication + ZBUserOperationMonitor) - %s] - textField：%@",__func__,textField.text);
+        }else if ([delegate isKindOfClass:NSClassFromString(@"UITextView")]) {// 如果是原生的UITextView
+            UITextView *textView = (UITextView *)delegate;
+            NSLog(@"[(UIApplication + ZBUserOperationMonitor) - %s] - textView：%@",__func__,textView.text);
+        }else if ([delegate isKindOfClass:NSClassFromString(@"DOMHTMLInputElement")]) {// 如果是Webview的INPUT
+            id node = [delegate valueForKey:@"_node"];
+            NSString *text = [node valueForKey:@"value"];
+            NSLog(@"[(UIApplication + ZBUserOperationMonitor) - %s] - DOMHTMLInputElement：%@",__func__,text);
+        }else if ([delegate isKindOfClass:NSClassFromString(@"DOMHTMLTextAreaElement")]) {// 如果是Webview的TEXTAREA
+            id node = [delegate valueForKey:@"_node"];
+            NSString *text = [node valueForKey:@"value"];
+            NSLog(@"[(UIApplication + ZBUserOperationMonitor) - %s] - DOMHTMLTextAreaElement：%@",__func__,text);
+        }
+//        NSString *responderTree = [self getResponderTree:touch.view];
+//        printf("\nresponderTree：%s\n",[responderTree UTF8String]);
+//        NSString *viewTree = [self getViewTree:touch.view];
+//        printf("\nviewTree：%s\n",[viewTree UTF8String]);
     }];
+}
+
+#pragma mark - responder method
++ (id)getResponderWithView:(UIView *)view className:(NSString *)className {
+    UIResponder *currentResponder = view;
+    while (currentResponder) {
+        if ([NSStringFromClass(currentResponder.class) isEqualToString:className]) {
+            return currentResponder;
+        }
+        currentResponder = currentResponder.nextResponder;
+    }
+    return nil;
+}
+
++ (NSString *)getResponderTree:(UIView *)view {
+    NSString *responderString = @"";
+    UIResponder *currentResponder = view;
+    while (currentResponder) {
+        responderString = [responderString stringByAppendingFormat:@" - %@",NSStringFromClass([currentResponder class])];
+        currentResponder = currentResponder.nextResponder;
+    }
+    return responderString;
+}
+
++ (NSString *)getViewTree:(UIView *)view {
+    NSString *viewString = @"";
+    UIView *currentView = view;
+    while (currentView) {
+        viewString = [viewString stringByAppendingFormat:@" - %@",NSStringFromClass([currentView class])];
+        currentView = currentView.superview;
+    }
+    return viewString;
 }
 @end

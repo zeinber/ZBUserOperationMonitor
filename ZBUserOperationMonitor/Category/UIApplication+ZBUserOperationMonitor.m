@@ -47,25 +47,18 @@ NSString *ZBUserOperationMonitor_keyboardPressDownNotification = @"ZBUserOperati
     }
     
     // 处理点击事件 - 获取手指pressDown的状态
-    if (touch.phase == UITouchPhaseBegan) {
+    if (touch.phase == UITouchPhaseEnded) {
         // 是键盘点击事件
-        NSLog(@"%@",[self getResponseTree:touch.view]);
         if ([self isKeyboadWithTouch:touch]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:ZBUserOperationMonitor_keyboardPressDownNotification object:touch userInfo:nil];
         }
     }
 }
 
+#pragma mark - private method
 - (BOOL)isKeyboadWithTouch:(UITouch *)touch {
-    //todo
-    return YES;
+    // window 为UIRemoteKeyboardWindow，说明touch在键盘上
+    return [touch.window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")];
 }
 
-- (NSString *)getResponseTree:(UIView *)view {
-    NSString *responseString = NSStringFromClass([view class]);
-    while (view.nextResponder) {
-        responseString = [responseString stringByAppendingFormat:@"- %@",NSStringFromClass([view.nextResponder class])];
-    }
-    return responseString;
-}
 @end
