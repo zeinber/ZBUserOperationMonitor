@@ -11,3 +11,5 @@
 ### 键盘
 + keyboard click
 
+## 博客传送门
+(iOS 键盘与剪切板的监控方案)[https://blog.zeinber.top/post/reverse/ios-user-operation-monitor]
