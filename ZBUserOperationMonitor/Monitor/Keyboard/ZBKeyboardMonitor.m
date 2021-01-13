@@ -10,6 +10,7 @@
 #import "ZBViewTool.h"
 #import <UIKit/UIKit.h>
 #import "ZBHooker.h"
+#import "YYTextView.h"
 
 extern NSString *ZBUserOperationMonitor_keyboardPressUpNotification;
 
@@ -42,20 +43,28 @@ extern NSString *ZBUserOperationMonitor_keyboardPressUpNotification;
 + (void)keyboardMonitor {
     /// monitor keyboard
     [[NSNotificationCenter defaultCenter] addObserverForName:ZBUserOperationMonitor_keyboardPressUpNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        // 这块主要是为了打印输入的内容
         UITouch *touch = note.object;
         id keyboardImpl = [ZBViewTool getResponderWithView:touch.view className:@"UIKeyboardImpl"];
         id delegate = [keyboardImpl valueForKey:@"delegate"];
         if ([delegate isKindOfClass:NSClassFromString(@"UITextField")]) {// 如果是原生的UITextField
             UITextField *textField = (UITextField *)delegate;
-            NSLog(@"[%s] - textField：%@",__func__,textField.text);
+            NSLog(@"[%s] - UITextField：%@",__func__,textField.text);
         }else if ([delegate isKindOfClass:NSClassFromString(@"UITextView")]) {// 如果是原生的UITextView
             UITextView *textView = (UITextView *)delegate;
-            NSLog(@"[%s] - textView：%@",__func__,textView.text);
+            NSLog(@"[%s] - UITextView：%@",__func__,textView.text);
+        }else if ([delegate isKindOfClass:NSClassFromString(@"YYTextView")]) {// 如果是原生的YYTextView
+            YYTextView *textView = (YYTextView *)delegate;
+            NSLog(@"[%s] - YYTextView：%@",__func__,textView.text);
         }else if ([delegate isKindOfClass:NSClassFromString(@"DOMHTMLInputElement")]) {// 如果是Webview的INPUT
             id node = [delegate valueForKey:@"_node"];
             NSString *text = [node valueForKey:@"value"];
             NSLog(@"[%s] - DOMHTMLInputElement：%@",__func__,text);
         }else if ([delegate isKindOfClass:NSClassFromString(@"DOMHTMLTextAreaElement")]) {// 如果是Webview的TEXTAREA
+            id node = [delegate valueForKey:@"_node"];
+            NSString *text = [node valueForKey:@"value"];
+            NSLog(@"[%s] - DOMHTMLTextAreaElement：%@",__func__,text);
+        }else if ([delegate isKindOfClass:NSClassFromString(@"YYTextView")]) {// 如果是YYTextView
             id node = [delegate valueForKey:@"_node"];
             NSString *text = [node valueForKey:@"value"];
             NSLog(@"[%s] - DOMHTMLTextAreaElement：%@",__func__,text);

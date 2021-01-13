@@ -30,13 +30,22 @@
                                     <segue destination="Tcs-aS-SJ9" kind="show" id="Trp-We-XpU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H64-VS-zaE">
+                                <rect key="frame" x="137.5" y="483" width="139" height="30"/>
+                                <state key="normal" title="自定义TextView测试"/>
+                                <connections>
+                                    <segue destination="Cuv-ja-eAz" kind="show" id="9bQ-kw-YZ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mTY-8F-H2Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="52m-g1-fbW"/>
                             <constraint firstItem="mTY-8F-H2Q" firstAttribute="top" secondItem="ZVY-Bj-Ovw" secondAttribute="bottom" constant="20" id="RZN-bt-hbe"/>
                             <constraint firstItem="ZVY-Bj-Ovw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RvF-bd-j97"/>
+                            <constraint firstItem="H64-VS-zaE" firstAttribute="top" secondItem="mTY-8F-H2Q" secondAttribute="bottom" constant="20" id="hbe-y4-SYn"/>
                             <constraint firstItem="mTY-8F-H2Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iOo-cv-7WI"/>
+                            <constraint firstItem="H64-VS-zaE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rdW-ku-feC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="121.875"/>
+            <point key="canvasLocation" x="743" y="475"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XTA-7Q-CR5">
@@ -101,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWP-7F-pah" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886.9565217391305" y="-226.33928571428569"/>
+            <point key="canvasLocation" x="1887" y="-196"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="H8R-aw-Zmg">
@@ -133,6 +142,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEf-DG-WfP" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1887" y="475"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="I11-oE-Bm5">
+            <objects>
+                <viewController id="Cuv-ja-eAz" customClass="YYTextViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yhw-BX-pys">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sW7-K0-lNg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xgg-cq-4qY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xud-zz-6FI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="1311"/>
         </scene>
     </scenes>
 </document>
